@@ -6,6 +6,8 @@ else
 	git add .
 	msg=":art: ${parameter}"
 	git commit -m "$msg"
-	echo "----------------------"
+	echo "commit done----------------------"
+	git pull
+	echo "pull done------------------------"
 	git push
 fi
