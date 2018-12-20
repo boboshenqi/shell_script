@@ -1,2 +1,2 @@
 # shell_script
-Useful shell scripts
+collect useful shell scripts
