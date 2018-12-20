@@ -1,13 +1,21 @@
 #!/bin/sh
-parameter="$1"
-if [ -z "$parameter" ]
+
+#check git workspace
+git add .
+if [ $? -ne 0 ]:
+then
+	echo "mgit:git add faild! check your workspace"
+	return
+fi
+
+#commit pull and push
+if [ -z "$1" ]
 then echo 'commit message is null,please check it and try again'
 else 
-	git add .
-	msg=":art: ${parameter}"
+	msg=":art: $1"
 	git commit -m "$msg"
-	echo "commit done----------------------"
+	echo "mgit:commit done----------------------"
 	git pull
-	echo "pull done------------------------"
+	echo "mgit:pull done------------------------"
 	git push
 fi
