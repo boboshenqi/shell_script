@@ -12,7 +12,7 @@ fi
 if [ -z "$1" ]
 then echo 'commit message is null,please check it and try again'
 else 
-	msg=":art: $1"
+	msg=" $1"
 	git commit -m "$msg"
 	echo "mgit:commit done----------------------"
 	git pull
