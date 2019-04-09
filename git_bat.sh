@@ -1,8 +1,7 @@
 #!/bin/sh
 
 #check git workspace
-git add .
-if [ $? -ne 0 ]:
+if git add . :
 then
 	echo "mgit:git add faild! check your workspace"
 	return
