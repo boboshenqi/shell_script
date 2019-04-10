@@ -21,12 +21,12 @@ fi
 # \e[31m
 
 git add . && 
-echo "\e[31m mgit add success-----------" && 
+echo "\e[32m mgit add success-----------\e[0m" && 
 git commit -m "$1" &&
-echo "\e[31m mgit commit success--------" &&
+echo "\e[32m mgit commit success--------\e[0m" &&
 if [ -z "$nopull" ]
 then git pull 
-echo "\e[31m mgit pull success----------" 
+echo "\e[32m mgit pull success----------\e[0m" 
 fi && 
 git push &&
-echo "\e[31m mgit push success----------"
+echo "\e[32m mgit push success----------\e[0m"
