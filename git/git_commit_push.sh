@@ -9,13 +9,15 @@ while getopts 'n:' op
 do
   case $op in
     n) nopull="yes" ;;
+    *) usage ;;
   esac
   shift
 done
 
 if [ -z "$1" ]
 then usage
-else
+fi
+
 git add . && 
 echo "mgit add success-----------" && 
 git commit -m "$1" &&
@@ -26,5 +28,3 @@ echo "mgit pull success----------"
 fi && 
 git push &&
 echo "mgit push success----------"
-
-fi
