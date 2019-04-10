@@ -19,15 +19,26 @@ if [ -z "$1" ]
 then usage
 fi
 
-# \e[31m
+# color: \\e[32m test \\e[0m
+#current_time $(($(date +%s%N)/1000000))
+
+
 
 git add . && 
-echo "\e[32m mgit add success-----------\e[0m" && 
+t_add=$(($(date +%s%N)/1000000))
+echo "\\e[32m mgit add success-----------\\e[0m" && 
+
 git commit -m "$1" &&
-echo "\e[32m mgit commit success--------\e[0m" &&
+t_commit=$(($(date +%s%N)/1000000))
+echo "\\e[32m mgit commit success--------[(($t_commit-$t_add)) ms]\\e[0m" &&
+
 if [ -z "$nopull" ]
 then git pull 
-echo "\e[32m mgit pull success----------\e[0m" 
+t_pull=$(($(date +%s%N)/1000000))
+echo "\\e[32m mgit pull success----------[(($t_pull-$t_commit)) ms]\\e[0m" 
+t_commit=t_pull
 fi && 
+
 git push &&
-echo "\e[32m mgit push success----------\e[0m"
+t_push=$(($(date +%s%N)/1000000))
+echo "\\e[32m mgit push success----------[(($t_push-$t_commit)) ms]\\e[0m"
