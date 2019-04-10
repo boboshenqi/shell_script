@@ -1,6 +1,7 @@
 #!/bin/sh
 usage() { 
 	echo "Usage: $0 [-n] 'commit message'" ;
+	echo "-n: no pull before push"
 	exit 1; 
 }
 
