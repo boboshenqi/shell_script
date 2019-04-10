@@ -1,3 +1,3 @@
 # shell_script
-collect useful shell scripts
+collect useful shell scripts.
 include git,network,system,text searching and processing and so on...
