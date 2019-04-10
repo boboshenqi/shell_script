@@ -3,7 +3,7 @@
 while getopts 'n:' op
 do
   case $op in
-    n) nopull="yes"
+    n) nopull="yes" ;;
   esac
 done
 
