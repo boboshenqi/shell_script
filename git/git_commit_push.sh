@@ -18,13 +18,15 @@ if [ -z "$1" ]
 then usage
 fi
 
+# \e[31m
+
 git add . && 
-echo "mgit add success-----------" && 
+echo "\e[31m mgit add success-----------" && 
 git commit -m "$1" &&
-echo "mgit commit success--------" &&
+echo "\e[31m mgit commit success--------" &&
 if [ -z "$nopull" ]
 then git pull 
-echo "mgit pull success----------" 
+echo "\e[31m mgit pull success----------" 
 fi && 
 git push &&
-echo "mgit push success----------"
+echo "\e[31m mgit push success----------"
