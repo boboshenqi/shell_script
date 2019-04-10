@@ -30,15 +30,15 @@ echo "\\e[32m mgit add success-----------\\e[0m" &&
 
 git commit -m "$1" &&
 t_commit=$(($(date +%s%N)/1000000))
-echo "\\e[32m mgit commit success--------[(($t_commit-$t_add)) ms]\\e[0m" &&
+echo "\\e[32m mgit commit success--------[$(($t_commit-$t_add)) ms]\\e[0m" &&
 
 if [ -z "$nopull" ]
 then git pull 
 t_pull=$(($(date +%s%N)/1000000))
-echo "\\e[32m mgit pull success----------[(($t_pull-$t_commit)) ms]\\e[0m" 
+echo "\\e[32m mgit pull success----------[$(($t_pull-$t_commit)) ms]\\e[0m" 
 t_commit=t_pull
 fi && 
 
 git push &&
 t_push=$(($(date +%s%N)/1000000))
-echo "\\e[32m mgit push success----------[(($t_push-$t_commit)) ms]\\e[0m"
+echo "\\e[32m mgit push success----------[$(($t_push-$t_commit)) ms]\\e[0m"
