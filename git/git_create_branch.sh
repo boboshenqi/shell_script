@@ -4,6 +4,7 @@ if [ -z "$1" ]
 	then echo "需要创建的branch不应为空"
 else
 	git checkout master && 
+	git pull &&
 	git checkout -b "$1" && 
 	git push origin "$1" && 
 	git branch --set-upstream-to=origin/"$1" "$1" && 
